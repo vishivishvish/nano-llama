@@ -7,7 +7,7 @@ def main():
     config = Config()
     model = NanoLlama(config)
 
-    x = torch.randint(0, config.vocab_size, (1, 10))
+    x = torch.randn(1, 10, config.dim)
     out = model(x)
 
     print("Output shape:", out.shape)

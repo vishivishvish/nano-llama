@@ -45,5 +45,18 @@ A minimal implementation of the Llama-style Transformer architecture
   - sequence length
 - Updated model to accept config
 
+#### Hyperparameters:
+- vocab_size: Number of unique tokens the model understands → language coverage
+- dim: Size/dimensionality of each token's embedding vector → representation power
+- n_layers: Number of Transformer blocks → reasoning depth
+- n_heads: Number of Attention heads → attention diversity
+- hidden_dim: Size of the feedforward layer inside each block → transformation capacity
+- max_seq_len: Maximum number of tokens the model can process at once → memory window
+
+### ✅ Step 7 — RMSNorm
+- Implemented RMSNorm (Llama-style normalization)
+- Replaced identity forward pass with normalization layer
+- Verified correct tensor flow and shape
+
 ## Status
-Step 6 done
+Step 7 done
