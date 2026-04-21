@@ -9,8 +9,21 @@ A minimal implementation of the Llama-style Transformer architecture
 - Grouped Query Attention (GQA)
 - Mixture of Experts (MoE)
 
-## Goal
-Build a clean, minimal, extensible transformer
+## Project Steps
+
+### ✅ Step 1 — Repository Initialized
+- GitHub repo created
+- README added
+
+### ✅ Step 2 — Project Structure Initialized
+- Created core files:
+  - `nano_llama.py`
+  - `train.py`
+  - `infer.py`
+- Created folders:
+  - `model/`
+  - `utils/`
+- Added `requirements.txt`
 
 ## Status
-Step 1 — Repo initialized
+Building core model (next: Config + RMSNorm)
