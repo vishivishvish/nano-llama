@@ -25,5 +25,10 @@ A minimal implementation of the Llama-style Transformer architecture
   - `utils/`
 - Added `requirements.txt`
 
+### ✅ Step 3 — Python Environment Setup
+- Created virtual environment (`venv`)
+- Installed dependencies (`torch`, `numpy`)
+- Verified model runs successfully
+
 ## Status
 Building core model (next: Config + RMSNorm)
