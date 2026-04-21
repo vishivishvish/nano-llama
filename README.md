@@ -1,6 +1,6 @@
 # nano-llama
 
-A minimal implementation of the Llama-style Transformer architecture.
+A minimal implementation of the Llama-style Transformer architecture
 
 ## Features (planned)
 - RMSNorm
