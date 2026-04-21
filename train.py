@@ -1,12 +1,13 @@
 import torch
 
-from nano_llama import NanoLlama
+from nano_llama import Config, NanoLlama
 
 
 def main():
-    model = NanoLlama()
+    config = Config()
+    model = NanoLlama(config)
 
-    x = torch.randint(0, 100, (1, 10))
+    x = torch.randint(0, config.vocab_size, (1, 10))
     out = model(x)
 
     print("Output shape:", out.shape)

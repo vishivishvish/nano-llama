@@ -36,5 +36,14 @@ A minimal implementation of the Llama-style Transformer architecture
 - Cleaned `nano_llama.py` (model-only)
 - Verified execution via `train.py`
 
+### ✅ Step 6 — Config Class
+- Introduced `Config` class for model hyperparameters
+- Centralized key settings:
+  - vocab size
+  - model dimension
+  - number of layers and heads
+  - sequence length
+- Updated model to accept config
+
 ## Status
-Step 5 done
+Step 6 done
