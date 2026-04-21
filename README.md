@@ -25,10 +25,16 @@ A minimal implementation of the Llama-style Transformer architecture
   - `utils/`
 - Added `requirements.txt`
 
-### ✅ Step 3 — Python Environment Setup
+### ✅ Step 3 & 4 — Python Environment Setup
 - Created virtual environment (`venv`)
 - Installed dependencies (`torch`, `numpy`)
 - Verified model runs successfully
 
+### ✅ Step 5 — Base Entry Script
+- Separated model definition from execution
+- Created `train.py` as entry point
+- Cleaned `nano_llama.py` (model-only)
+- Verified execution via `train.py`
+
 ## Status
-Building core model (next: Config + RMSNorm)
+Step 5 done
