@@ -62,5 +62,11 @@ A minimal implementation of the Llama-style Transformer architecture
 - Replaced identity forward pass with normalization layer
 - Verified correct tensor flow and shape
 
+### ✅ Step 8 — RoPE (Rotary Positional Embeddings)
+- Implemented RoPE for positional encoding
+- Precomputed sine/cosine frequency matrices
+- Applied rotational transformation to embeddings
+- Enabled sequence-aware representations
+
 ## Status
-Step 7 done
+Step 8 done
