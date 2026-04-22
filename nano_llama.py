@@ -1,5 +1,32 @@
+import math
+
 import torch
 import torch.nn as nn
+
+
+def precompute_rope_frequencies(dim, max_seq_len, theta=10000.0):
+    freqs = 1.0 / (theta ** (torch.arange(0, dim, 2).float() / dim))
+    positions = torch.arange(max_seq_len).float()
+
+    freqs = torch.outer(positions, freqs)  # (seq_len, dim/2)
+
+    cos = torch.cos(freqs)
+    sin = torch.sin(freqs)
+
+    return cos, sin
+
+
+def apply_rope(x, cos, sin):
+    # x shape: (batch, seq_len, dim)
+    x1 = x[..., ::2]
+    x2 = x[..., 1::2]
+
+    cos = cos[: x.shape[1]].unsqueeze(0)
+    sin = sin[: x.shape[1]].unsqueeze(0)
+
+    x_rotated = torch.cat([x1 * cos - x2 * sin, x1 * sin + x2 * cos], dim=-1)
+
+    return x_rotated
 
 
 class Config:
@@ -40,5 +67,12 @@ class NanoLlama(nn.Module):
 
         self.norm = RMSNorm(config.dim)
 
+        cos, sin = precompute_rope_frequencies(config.dim, config.max_seq_len)
+
+        self.register_buffer("cos", cos)
+        self.register_buffer("sin", sin)
+
     def forward(self, x):
-        return self.norm(x)
+        x = self.norm(x)
+        x = apply_rope(x, self.cos, self.sin)
+        return x
