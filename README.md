@@ -1,3 +1,9 @@
+![nano-llama cover](cover-pic.png)
+
+<p align="center">
+  <img src="cover-pic.png" alt="nano-llama cover" width="800" />
+</p>
+
 # nano-llama
 
 A minimal implementation of the Llama-style Transformer architecture
